@@ -11,7 +11,7 @@ thumbnail: assets/img/publication_preview/eeg_aura.png
 
 Excited to announce that our paper "Critical role of EEG signals in assessment of sex-specific insights in neurological diagnostics via machine learning approach" has been published in [Scientific Reports](https://www.nature.com/articles/s41598-025-30848-y)!
 
-This study demonstrates that neural networks can detect biological sex from EEG signals with notable accuracy across multiple datasets, and that while sex-related patterns are robustly present in EEG, they appear to have a negligible direct influence on pathological diagnosis at hand, underscoring the need to account for sex as a confounder when developing unbiased AI diagnostic models.
+This study demonstrates that neural networks can detect biological sex from EEG signals with notable accuracy across multiple datasets. While sex-related patterns are robustly present in EEG, they appear to have a negligible direct influence on pathological diagnosis at hand. This underscores the need to account for sex as a confounder when developing unbiased AI diagnostic models.
 
 **Publication Details:**
 
