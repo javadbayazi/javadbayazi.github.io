@@ -84,6 +84,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/MJ_bayazi_at_icml2024/";
+            },},{id: "news-aura-eeg-paper-published-in-scientific-reports",
+          title: 'AURA-EEG Paper Published in Scientific Reports',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/mj_bayazi_AURA_EEG_Scientific_Reports/";
             },},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
