@@ -79,7 +79,7 @@
       {% if include.fetchpriority %}
         fetchpriority="{{ include.fetchpriority }}"
       {% endif %}
-      {% if include.loading == "eager" or include.fetchpriority == "high" %}
+      {% if include.loading == 'eager' or include.fetchpriority == 'high' %}
         decoding="sync"
       {% else %}
         decoding="async"
