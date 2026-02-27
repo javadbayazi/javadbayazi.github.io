@@ -25,6 +25,8 @@ URLS_TO_SUBMIT = [
     f"{SITE_URL}/cv/",
     f"{SITE_URL}/blog/",
     f"{SITE_URL}/books/",
+    f"{SITE_URL}/news/mj_bayazi_AURA_EEG_Scientific_Reports/",
+    f"{SITE_URL}/news/grid_mcp_space_launched/",
 ]
 
 
