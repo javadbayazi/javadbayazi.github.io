@@ -1,6 +1,12 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
+<!-- LCP image preload: profile picture on the about page -->
+{% if page.profile and page.profile.image %}
+  {% assign _preload_img = page.profile.image | prepend: 'assets/img/' | relative_url %}
+  <link rel="preload" as="image" href="{{ _preload_img }}" fetchpriority="high">
+{% endif %}
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
 <link

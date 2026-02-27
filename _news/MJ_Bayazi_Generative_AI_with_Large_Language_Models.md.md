@@ -21,6 +21,6 @@ Kudos to DeepLearning.AI & Amazon Web Services (AWS) for such a learning experie
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/MJ_Bayazi_DL_NLP_LLM.jpeg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="lazy" path="assets/img/MJ_Bayazi_DL_NLP_LLM.jpeg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>

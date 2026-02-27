@@ -13,6 +13,6 @@ Thrilled to have been at the AAAI Conference, where we dived deep into discussio
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/mj_Bayazi_at_AAAI2024.jpeg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="lazy" path="assets/img/mj_Bayazi_at_AAAI2024.jpeg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
