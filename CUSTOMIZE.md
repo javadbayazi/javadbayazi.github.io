@@ -91,7 +91,7 @@ To access the collections, you can use the `site.COLLECTION_NAME` variable in yo
 
 To add publications create a new entry in the [\_bibliography/papers.bib](_bibliography/papers.bib) file. You can find the BibTeX entry of a publication in Google Scholar by clicking on the quotation marks below the publication title, then clicking on "BibTeX", or also in the conference page itself. By default, the publications will be sorted by year and the most recent will be displayed first. You can change this behavior and more in the `Jekyll Scholar` section in [\_config.yml](_config.yml) file.
 
-You can add extra information to a publication, like a PDF file in the `assets/pdfs/` directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `annotation`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `html`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
+You can add extra information to a publication, like a PDF file in the `assets/pdfs/` directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `annotation`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `google_scholar_id`, `html`, `inspirehep_id`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
 
 ### Author annotation
 
@@ -147,6 +147,8 @@ There are several custom bibtex keywords that you can use to affect how the entr
 - `slides`: Adds a "Slides" button redirecting to a specified file (if a full link is not specified, the file will be assumed to be placed in the /assets/pdf/ directory)
 - `supp`: Adds a "Supp" button to a specified file (if a full link is not specified, the file will be assumed to be placed in the /assets/pdf/ directory)
 - `website`: Adds a "Website" button redirecting to the specified link
+- `google_scholar_id`: Adds a [Google Scholar](https://scholar.google.com/) badge showing the citation count for the publication. The value is the part of the `citation_for_view` parameter that comes **after** the colon in the Google Scholar citation URL. To find it, open your Google Scholar profile, click on a publication, and look at the `citation_for_view` query parameter in the URL (e.g., for `https://scholar.google.com/citations?view_op=view_citation&user=QL5PQQgAAAAJ&citation_for_view=QL5PQQgAAAAJ:u5HHmVD_uO8C`, the value to use is `u5HHmVD_uO8C` — only the part after the colon). Requires `scholar_userid` to be set in [\_data/socials.yml](_data/socials.yml) and `enable_publication_badges.google_scholar: true` in [\_config.yml](_config.yml).
+- `inspirehep_id`: Adds an [InspireHEP](https://inspirehep.net/) badge showing the citation count. The value is the numeric literature ID from InspireHEP.
 
 You can implement your own buttons by editing the [\_layouts/bib.liquid](_layouts/bib.liquid) file.
 
