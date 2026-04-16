@@ -106,6 +106,6 @@ jobs:
       - name: Notify search engines 🔎
         if: github.event_name != 'pull_request'
         run: |
-          SITEMAP_URL="$(python3 -c "import urllib.parse; print(urllib.parse.quote('https://javadbayazi.github.io/sitemap.xml', safe=''))")"
+          SITEMAP_URL="$(python3 -c "import urllib.parse; print(urllib.parse.quote('https://javadbayazi.github.io/sitemap.xml', safe=':/'))")"
           curl --silent --show-error --location --max-time 30 "https://www.google.com/ping?sitemap=${SITEMAP_URL}" || true
           curl --silent --show-error --location --max-time 30 "https://www.bing.com/ping?sitemap=${SITEMAP_URL}" || true
