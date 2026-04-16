@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AURA-EEG Paper Published in Scientific Reports"
-date: 2025-01-24 10:00:00-0400
+date: 2025-12-10 10:00:00-0400
 inline: false
 related_posts: true
 tags: EEG, ScientificReports, NeuroDiagnostics, MachineLearning, Nature, BrainSignals
