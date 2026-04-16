@@ -49,12 +49,12 @@ def read_api_key() -> str:
 def submit_urls_batch(urls: List[str], api_key: str, host: str) -> Dict:
     """
     Submit multiple URLs to IndexNow in a single request
-    
+
     Args:
         urls: List of URLs to submit
         api_key: Your IndexNow API key
         host: Your website host
-    
+
     Returns:
         Response data from the API
     """
@@ -63,11 +63,11 @@ def submit_urls_batch(urls: List[str], api_key: str, host: str) -> Dict:
         "key": api_key,
         "urlList": urls
     }
-    
+
     headers = {
         "Content-Type": "application/json; charset=utf-8"
     }
-    
+
     try:
         response = requests.post(
             INDEXNOW_ENDPOINT,
@@ -75,7 +75,7 @@ def submit_urls_batch(urls: List[str], api_key: str, host: str) -> Dict:
             headers=headers,
             timeout=30
         )
-        
+
         return {
             "status_code": response.status_code,
             "success": response.status_code in [200, 202],
@@ -92,13 +92,13 @@ def submit_urls_batch(urls: List[str], api_key: str, host: str) -> Dict:
 def submit_url_single(url: str, api_key: str, host: str, key_location: str) -> Dict:
     """
     Submit a single URL to IndexNow
-    
+
     Args:
         url: URL to submit
         api_key: Your IndexNow API key
         host: Your website host
         key_location: Location of the API key file on your site
-    
+
     Returns:
         Response data from the API
     """
@@ -107,14 +107,14 @@ def submit_url_single(url: str, api_key: str, host: str, key_location: str) -> D
         "key": api_key,
         "keyLocation": key_location
     }
-    
+
     try:
         response = requests.get(
             INDEXNOW_ENDPOINT,
             params=params,
             timeout=30
         )
-        
+
         return {
             "status_code": response.status_code,
             "success": response.status_code in [200, 202],
@@ -134,20 +134,20 @@ def main():
     api_key = read_api_key()
     print(f"✅ API key loaded: {api_key[:8]}...")
     print()
-    
+
     # Extract host from site URL
     host = SITE_URL.replace("https://", "").replace("http://", "").rstrip("/")
     key_location = f"{SITE_URL}/{API_KEY_FILE}"
-    
+
     print(f"🌐 Host: {host}")
     print(f"🔑 Key location: {key_location}")
     print(f"📝 Submitting {len(URLS_TO_SUBMIT)} URLs...")
     print()
-    
+
     # Submit URLs in batch
     print("📤 Batch submission:")
     result = submit_urls_batch(URLS_TO_SUBMIT, api_key, host)
-    
+
     if result["success"]:
         print(f"✅ Batch submission successful! (Status: {result['status_code']})")
         print(f"   Response: {result['response_text']}")
@@ -165,15 +165,15 @@ def main():
         print()
         print("⚠️  Falling back to individual submissions...")
         print()
-        
+
         # Try submitting individually
         success_count = 0
         fail_count = 0
-        
+
         for i, url in enumerate(URLS_TO_SUBMIT, 1):
             print(f"📤 [{i}/{len(URLS_TO_SUBMIT)}] Submitting: {url}")
             result = submit_url_single(url, api_key, host, key_location)
-            
+
             if result["success"]:
                 print(f"   ✅ Success (Status: {result['status_code']})")
                 success_count += 1
@@ -185,12 +185,12 @@ def main():
                     print(f"   Status: {result['status_code']}")
                 fail_count += 1
             print()
-        
+
         print(f"📊 Summary: {success_count} succeeded, {fail_count} failed")
-        
+
         if fail_count > 0:
             sys.exit(1)
-    
+
     print()
     print("=" * 50)
     print("🎉 IndexNow submission complete!")
