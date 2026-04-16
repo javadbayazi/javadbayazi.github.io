@@ -89,6 +89,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/mj_bayazi_AURA_EEG_Scientific_Reports/";
+            },},{id: "news-starting-as-ai-research-scientist-at-hydro-québec",
+          title: 'Starting as AI Research Scientist at Hydro-Québec',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/mj_bayazi_hydroquebec_ai_scientist_2025/";
             },},{id: "news-grid-mcp-space-launched-on-hugging-face",
           title: 'Grid MCP Space Launched on Hugging Face',
           description: "",
