@@ -84,6 +84,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/MJ_bayazi_at_icml2024/";
+            },},{id: "news-started-internship-as-applied-machine-learning-researcher-at-mila",
+          title: 'Started Internship as Applied Machine Learning Researcher at Mila',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/mj_bayazi_mila_amlert_researcher_2024/";
             },},{id: "news-starting-as-ai-research-scientist-at-hydro-québec",
           title: 'Starting as AI Research Scientist at Hydro-Québec',
           description: "",
